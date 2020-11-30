@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Search from './Search';
+
+class Body extends React.Component {
+  render() {
+    return (
+      <div>
+        <Search />
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Body />
   </React.StrictMode>,
   document.getElementById('root')
 );
