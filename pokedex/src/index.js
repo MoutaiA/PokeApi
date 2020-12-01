@@ -5,10 +5,20 @@ import reportWebVitals from './reportWebVitals';
 import Search from './Search';
 
 class Body extends React.Component {
+
+  fetchData(pokemon) {
+    fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log('An error occured : ' + err));
+  }
+
   render() {
     return (
-      <div>
-        <Search />
+      <div className="nav">
+        <Search fetchData={this.fetchData.bind(this)} />
       </div>
     );
   }
