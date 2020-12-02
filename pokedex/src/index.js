@@ -3,22 +3,51 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Search from './Search';
+import Card from './Card';
 
 class Body extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pokemon: {
+        name: '',
+        id: 0,
+        type: [],
+        image: ''
+      },
+      isLoading: false
+    }
+  }
 
   fetchData(pokemon) {
     fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
       .then(res => res.json())
       .then(res => {
-        console.log(res);
+        this.setState({
+          pokemon: {
+            name: res.name,
+            id: res.id,
+            type: res.types.map(el => el.type.name),
+            image: res.sprites.front_default
+          },
+        }, () => {
+          this.setState({ isLoading: true })
+        });
+        //console.log(res);
+        return res;
       })
-      .catch(err => console.log('An error occured : ' + err));
+      .catch(err => console.log('An error occurred : ' + err));
   }
 
   render() {
     return (
-      <div className="nav">
-        <Search fetchData={this.fetchData.bind(this)} />
+      <div className="container">
+        <div className="nav">
+          <Search fetchData={this.fetchData.bind(this)} />
+        </div>
+        <div>
+          <Card isLoading={this.state.isLoading} pokemon={this.state.pokemon} />
+        </div>
       </div>
     );
   }

@@ -5,12 +5,12 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pokemon: ''
+            pokemon: '',
         }
     }
 
     handleChange(event) {
-        this.setState({pokemon: event.target.value});
+        this.setState({pokemon: event.target.value.toLowerCase()});
     }
 
     handleSubmit(event) {
