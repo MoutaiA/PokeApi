@@ -10,7 +10,7 @@ class Search extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({pokemon: event.target.value.toLowerCase()});
+        this.setState({ pokemon: event.target.value.toLowerCase() });
     }
 
     handleSubmit(event) {
@@ -21,9 +21,9 @@ class Search extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
-                <input type="text" value={this.state.pokemon} onChange={this.handleChange.bind(this)} placeholder="Pikachu, Mew, Charmander" />
-                <button type="submit" value={this.state.pokemon}><span className="button-search">Catch 'em all ! </span>Search</button>
+            <form className="search-input" onSubmit={this.handleSubmit.bind(this)}>
+                <input type="text" value={this.state.pokemon} onChange={this.handleChange.bind(this)} placeholder="Pikachu, Mew, Charmander, etc ..." />
+                <button type="submit" value={this.state.pokemon}>Catch 'em all !</button>
             </form>
         )
     }

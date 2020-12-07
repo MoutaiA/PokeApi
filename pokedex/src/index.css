@@ -25,7 +25,7 @@ code {
   display: flex;
 }
 
-.nav-bar > a {
+.nav-bar>a {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -43,4 +43,12 @@ code {
 .header-logo img {
   width: 50%;
   height: 100%;
+}
+
+/* Footer */
+
+.main-footer {
+  border-top: 5px solid #282c34;
+  background-color: #20232a;
+  width: 100%;
 }
