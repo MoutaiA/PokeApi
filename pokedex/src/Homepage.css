@@ -1,0 +1,9 @@
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-container>section {
+    width: 25%;
+    height: 300px;
+}
