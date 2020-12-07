@@ -1,0 +1,18 @@
+.container-title {
+    border-radius: 5px 5px 0 0;
+    color: white;
+    background-color: #ef5350;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 2%;
+    text-align: center;
+    border: 1px solid #b83432;
+}
+
+.container-body {
+    border: 1px gray solid;
+    padding: 2%;
+    padding-top: 10px;
+    border-radius: 0 0 5px 5px;
+    text-align: justify;
+}

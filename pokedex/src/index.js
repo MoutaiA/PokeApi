@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Search from './Search';
 import Card from './Card';
+import Container from './Container';
 
 class Body extends React.Component {
   constructor(props) {
@@ -47,6 +48,11 @@ class Body extends React.Component {
         </div>
         <div>
           <Card isLoading={this.state.isLoading} pokemon={this.state.pokemon} />
+        </div>
+        <div className="card-container">
+          <Container class="highlight" title="Highlight" />
+          <Container class="last-visited" title="Last visited" />
+          <Container class="favorite" title="Favorites" />
         </div>
       </div>
     );
