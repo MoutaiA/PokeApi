@@ -42,18 +42,33 @@ class Body extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="nav">
-          <Search fetchData={this.fetchData.bind(this)} />
-        </div>
-        <div>
-          <Card isLoading={this.state.isLoading} pokemon={this.state.pokemon} />
-        </div>
-        <div className="card-container">
-          <Container class="highlight" title="Highlight" />
-          <Container class="last-visited" title="Last visited" />
-          <Container class="favorite" title="Favorites" />
-        </div>
+      <div className="app">
+        <header class="header-container">
+          <div class="header-logo">
+            <img alt="Logo of the PokeAPI" src="images/logo.png" />
+          </div>
+          <nav class="nav-bar">
+            <a href="" class="nav-bar-menu">Home</a>
+            <a href="" class="nav-bar-menu">About</a>
+            <a href="" class="nav-bar-menu">Github</a>
+          </nav>
+        </header>
+        <main>
+          <div className="container">
+            <div className="nav">
+              <Search fetchData={this.fetchData.bind(this)} />
+            </div>
+            <div>
+              <Card isLoading={this.state.isLoading} pokemon={this.state.pokemon} />
+            </div>
+            <div className="card-container">
+              <Container class="highlight" title="Highlight" />
+              <Container class="last-visited" title="Last visited" />
+              <Container class="favorite" title="Favorites" />
+            </div>
+          </div>
+        </main>
+        <footer class="main-footer"></footer>
       </div>
     );
   }
