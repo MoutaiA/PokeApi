@@ -41,10 +41,7 @@ The pokedex project is a web app where the user can have access to multiple page
 - A user (for storing some informations, like the favourite)
 - Single Page Application
 
-## Versions :
+## Stack :
 
-- **[V1]** Only fetching the data from the pokemon api
-- **[V2]** Making the whole system of storage
-- **[V3]** Create the differents pages
-- **[V4]** Routing
-- **[V5]** Using a Database instead of an API, for the storage
+- React: 17.0.1
+- React-Router-Dom: 5.2.0
