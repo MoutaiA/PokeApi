@@ -49,9 +49,9 @@ class Homepage extends React.Component {
                         <Card isLoading={this.state.isLoading} pokemon={this.state.pokemon} />
                     </div>
                     <div className="card-container">
-                        <Container class="highlight" title="Highlight" />
-                        <Container class="last-visited" title="Last visited" />
-                        <Container class="favorite" title="Favorites" />
+                        <Container className="highlight" title="Highlight" />
+                        <Container className="last-visited" title="Last visited" />
+                        <Container className="favorite" title="Favorites" />
                     </div>
                 </div>
             </main>
