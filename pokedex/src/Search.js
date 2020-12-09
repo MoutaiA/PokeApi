@@ -1,32 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Search.css';
+import {
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+} from "react-router-dom";
 
-class Search extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            pokemon: '',
-        }
+
+function Search(props) {
+    const [pokemon, setPokemon] = useState('');
+
+    let handleChange = (event) => {
+        setPokemon(event.target.value.toLowerCase());
     }
 
-    handleChange(event) {
-        this.setState({ pokemon: event.target.value.toLowerCase() });
-    }
-
-    handleSubmit(event) {
+    let handleSubmit = (event) => {
         event.preventDefault();
-        const pokemon = this.state.pokemon;
-        this.props.fetchData(pokemon);
+        const pkmn = pokemon;
+        props.fetchData(pkmn);
     }
 
-    render() {
-        return (
-            <form className="search-input" onSubmit={this.handleSubmit.bind(this)}>
-                <input type="text" value={this.state.pokemon} onChange={this.handleChange.bind(this)} placeholder="Pikachu, Mew, Charmander, etc ..." />
-                <button type="submit" value={this.state.pokemon}>Catch 'em all !</button>
-            </form>
-        )
-    }
+    return (
+        <form className="search-input" onSubmit={handleSubmit.bind(this)}>
+            <input type="text" value={pokemon} onChange={handleChange.bind(this)} placeholder="Pikachu, Mew, Charmander, etc ..." />
+            <button type="submit" value={pokemon}>Catch 'em all !</button>
+        </form>
+    )
 }
 
 export default Search;

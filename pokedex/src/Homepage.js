@@ -3,6 +3,13 @@ import './Homepage.css';
 import Search from './Search';
 import Card from './Card';
 import Container from './Container';
+import {
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+} from "react-router-dom";
 
 function Homepage() {
     // constructor(props) {
@@ -44,6 +51,8 @@ function Homepage() {
             .catch(err => console.log('An error occurred : ' + err));
     }
 
+    let { path, url } = useRouteMatch();
+
     return (
         <main>
             <div className="container">
@@ -57,6 +66,7 @@ function Homepage() {
                     <Container className="highlight" title="Highlight" />
                     <Container className="last-visited" title="Last visited" />
                     <Container className="favorite" title="Favorites" />
+
                 </div>
             </div>
         </main>
