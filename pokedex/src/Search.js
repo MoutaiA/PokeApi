@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import './Search.css';
 import {
-    Switch,
-    Route,
     Link,
-    useParams,
-    useRouteMatch
 } from "react-router-dom";
 
 
@@ -26,17 +22,13 @@ function Search(props) {
         }
     }
 
-    let { url, path } = useRouteMatch();
-    console.log({
-        'URL': url,
-        'PATH': path
-    });
-
     return (
-        <form className="search-input" onSubmit={handleSubmit.bind(this)}>
-            <input type="text" value={pokemon} onChange={handleChange.bind(this)} placeholder="Pikachu, Mew, Charmander, etc ..." />
-            <button type="submit" value={pokemon}>Catch 'em all !</button>
-        </form>
+        <div>
+            <form className="search-input" onSubmit={handleSubmit.bind(this)}>
+                <input type="text" value={pokemon} onChange={handleChange.bind(this)} placeholder="Pikachu, Mew, Charmander, etc ..." />
+               <Link to={`/card?pokemon=${pokemon}`}><button type="submit" value={pokemon}>Catch 'em all !</button></Link>
+            </form>
+        </div>
     )
 }
 

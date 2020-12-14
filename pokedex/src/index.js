@@ -4,14 +4,15 @@ import './index.css';
 import Homepage from './Homepage';
 import Footer from './Footer';
 import NotFound from './NotFound';
+import Card from './Card';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link
+  Link,
 } from "react-router-dom";
 
-function Test(props) {
+function Test() {
   return (
     <div>
       <h1>Yo</h1>
@@ -36,6 +37,7 @@ class Body extends React.Component {
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route path="/about" component={Test} />
+            <Route path="/card" component={Card} />
             <Route component={NotFound} />
           </Switch>
           <Footer />
