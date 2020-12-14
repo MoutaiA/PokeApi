@@ -12,18 +12,6 @@ import {
 } from "react-router-dom";
 
 function Homepage() {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         pokemon: {
-    //             name: '',
-    //             id: 0,
-    //             type: [],
-    //             image: ''
-    //         },
-    //         isLoading: false
-    //     }
-    // }
 
     const [pokemon, setPokemon] = useState({
         name: '',

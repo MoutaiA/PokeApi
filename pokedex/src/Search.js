@@ -18,9 +18,15 @@ function Search(props) {
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        const pkmn = pokemon;
-        props.fetchData(pkmn);
+        const pokemonName = pokemon;
+        props.fetchData(pokemonName);
     }
+
+    let { url, path } = useRouteMatch();
+    console.log({
+        'URL': url,
+        'PATH': path
+    });
 
     return (
         <form className="search-input" onSubmit={handleSubmit.bind(this)}>
