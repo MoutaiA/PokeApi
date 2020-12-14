@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Homepage from './Homepage';
 import Footer from './Footer';
+import NotFound from './NotFound';
 import {
   BrowserRouter as Router,
   Route,
@@ -35,6 +36,7 @@ class Body extends React.Component {
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route path="/about" component={Test} />
+            <Route component={NotFound} />
           </Switch>
           <Footer />
         </div>
