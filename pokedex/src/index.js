@@ -5,20 +5,13 @@ import Homepage from './Homepage';
 import Footer from './Footer';
 import NotFound from './NotFound';
 import Card from './Card';
+import About from './About';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Link,
 } from "react-router-dom";
-
-function Test() {
-  return (
-    <div>
-      <h1>Yo</h1>
-    </div>
-  )
-}
 
 class Body extends React.Component {
   render() {
@@ -36,7 +29,7 @@ class Body extends React.Component {
           </header>
           <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route path="/about" component={Test} />
+            <Route path="/about" component={About} />
             <Route path="/card" component={Card} />
             <Route component={NotFound} />
           </Switch>
