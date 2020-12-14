@@ -18,8 +18,12 @@ function Search(props) {
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        const pokemonName = pokemon;
-        props.fetchData(pokemonName);
+        if (pokemon !== null && pokemon !== undefined && pokemon !== '') {
+            const pokemonName = pokemon;
+            props.fetchData(pokemonName);
+        } else {
+            console.log('You didn\'t entered a valid character or it\'s empty !');
+        }
     }
 
     let { url, path } = useRouteMatch();
