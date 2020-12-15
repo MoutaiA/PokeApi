@@ -1,0 +1,26 @@
+.failed-card-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.warning {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+
+.warning>h1 {
+    margin-top: 30px;
+    color: rgb(192, 46, 46);
+}
+
+.warning > img {
+    width: 100px;
+}
+
+.failed-card-header>div:last-child {
+    margin: 20px;
+    margin-left: 50px;
+    font-weight: bold;
+}

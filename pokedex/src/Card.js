@@ -36,13 +36,28 @@ function Card() {
         fetchData(pokemonFetched);
     }, []);
 
-    return (
-        <div>
-            Hello {pokemon.name}
-            <img src={pokemon.image} alt='toto' />
-        </div>
-    );
 
+    if (query.get('pokemon')) {
+        return (
+            <div>
+                ok
+            </div>
+        );
+
+    } else {
+        return (
+            <div>
+                <div className="failed-card-header">
+                    <div className="warning">
+                        <img src="images/warning.png" alt="Logo of a warning" />
+                        <h1>You've entered an invalid Pokémon or no Pokémon at all !</h1>
+                        <img src="images/warning.png" alt="Logo of a warning" />
+                    </div>
+                    <div>Please enter a valid Pokémon in the search bar.</div>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default Card;
