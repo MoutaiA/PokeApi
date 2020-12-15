@@ -24,3 +24,12 @@
     margin-left: 50px;
     font-weight: bold;
 }
+
+.desc-pokemon {
+    display: flex;
+    justify-content: space-around;
+}
+
+.images-pokemon {
+    display: flex;
+}

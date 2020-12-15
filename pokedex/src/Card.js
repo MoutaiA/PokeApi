@@ -10,7 +10,8 @@ function Card() {
         name: '',
         id: 0,
         type: [],
-        image: ''
+        front: '',
+        back: ''
     });
 
     let fetchData = (pokemonName) => {
@@ -21,7 +22,8 @@ function Card() {
                     name: res.name,
                     id: res.id,
                     type: res.types.map(el => el.type.name),
-                    image: res.sprites.front_default
+                    front: res.sprites.front_default,
+                    back: res.sprites.back_default,
                 },
                 )
                 return res;
@@ -39,8 +41,19 @@ function Card() {
 
     if (query.get('pokemon')) {
         return (
-            <div>
-                ok
+            <div className="desc-pokemon">
+                <div className="infos-pokemon">
+                    <h1>{pokemon.name} - ID : {pokemon.id}</h1>
+                    <div>
+                        <ul>
+                            {[...pokemon.type].map(el => <li key={el}>{el}</li>)}
+                        </ul>
+                    </div>
+                </div>
+                <div className="images-pokemon">
+                    <div className="infos-pokemon-front"><img src={pokemon.front} alt="The front of the pokemon" /></div>
+                    <div className="infos-pokemon-back"><img src={pokemon.back} alt="The back of the pokemon" /></div>
+                </div>
             </div>
         );
 

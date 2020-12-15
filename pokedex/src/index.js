@@ -6,7 +6,6 @@ import Footer from './Footer';
 import NotFound from './NotFound';
 import Card from './Card';
 import About from './About';
-import Contact from './Contact';
 import Search from './Search';
 import {
   BrowserRouter as Router,
@@ -36,7 +35,6 @@ class Body extends React.Component {
             <Route exact path="/" component={Homepage} />
             <Route path="/about" component={About} />
             <Route path="/card" component={Card} />
-            <Route path="/contact" component={Contact} />
             <Route component={NotFound} />
           </Switch>
           <Footer />
