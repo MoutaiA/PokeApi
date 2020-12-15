@@ -7,6 +7,7 @@ import NotFound from './NotFound';
 import Card from './Card';
 import About from './About';
 import Contact from './Contact';
+import Search from './Search';
 import {
   BrowserRouter as Router,
   Route,
@@ -28,6 +29,9 @@ class Body extends React.Component {
               <Link to="/about" className="nav-bar-menu">About</Link>
             </nav>
           </header>
+          <main>
+          <Search />
+          </main>
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route path="/about" component={About} />
