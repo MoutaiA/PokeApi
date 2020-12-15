@@ -5,7 +5,14 @@ class Footer extends React.Component {
     render() {
         return (
             <footer className="main-footer">
-                some stuff
+                <div className="pokeapi-ref">
+                    <img src="images/logo.png" alt="PokéApi's logo" />
+                    <a href="https://pokeapi.co/">Link to the PokéAPI</a>
+                </div>
+                <div className="contact">
+                    <a href="https://github.com/MoutaiA"><img src="images/github-logo.png" alt="Github's logo" /></a>
+                    <a className="contact-link" href="/contact">Contact</a>
+                </div>
             </footer>
         );
     }

@@ -3,4 +3,38 @@
     background-color: #20232a;
     width: 100%;
     color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pokeapi-ref {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokeapi-ref>img {
+    margin-left: -20px;
+}
+
+.pokeapi-ref>a {
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.contact>a>img {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    border-radius: 20%;
+
+}
+.contact-link {
+    color: white;
+    text-decoration: none;
+    margin-top: 100px;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
 }
