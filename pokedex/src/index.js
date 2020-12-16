@@ -7,7 +7,6 @@ import NotFound from './NotFound';
 import Card from './Card';
 import About from './About';
 import Search from './Search';
-import Carousel from './Carousel';
 import {
   BrowserRouter as Router,
   Route,
@@ -31,14 +30,13 @@ class Body extends React.Component {
           </header>
           <main>
             <Search />
-            <Carousel />
+            <Switch>
+              <Route exact path="/" component={Homepage} />
+              <Route path="/about" component={About} />
+              <Route path="/card" component={Card} />
+              <Route component={NotFound} />
+            </Switch>
           </main>
-          <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route path="/about" component={About} />
-            <Route path="/card" component={Card} />
-            <Route component={NotFound} />
-          </Switch>
           <Footer />
         </div>
       </Router>

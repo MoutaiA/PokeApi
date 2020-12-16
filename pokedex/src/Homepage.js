@@ -1,10 +1,12 @@
 import React from 'react';
 import './Homepage.css';
 import Container from './Container';
+import Carousel from './Carousel';
 
 function Homepage() {
     return (
-        <div className="container">
+        <div className="container-homepage">
+            <Carousel />
             <div className="card-container">
                 <Container className="highlight" title="Highlight" />
                 <Container className="last-visited" title="Last visited" />
