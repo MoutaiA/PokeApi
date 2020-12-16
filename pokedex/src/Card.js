@@ -31,10 +31,36 @@ function Card() {
             .catch(err => console.log('An error occurred : ' + err));
     }
 
+    let handlePrev = event => {
+        event.preventDefault();
+        let id = 0;
+        if (pokemon.id === 1) {
+            id = 151
+            setPokemon({ id: id })
+        } else {
+            id = pokemon.id - 1
+            setPokemon({ id: id })
+        }
+        fetchData(id)
+    }
+
+    let handleNext = event => {
+        event.preventDefault();
+        let id = 0;
+        if (pokemon.id === 151) {
+            id = 1
+            setPokemon({ id: id })
+        } else {
+            id = pokemon.id + 1
+            setPokemon({ id: id })
+        }
+        fetchData(id)
+    }
+
     let query = new URLSearchParams(useLocation().search);
 
     useEffect(() => {
-        const pokemonFetched = query.get('pokemon');
+        const pokemonFetched = query.get('pokemon') ? query.get('pokemon') : query.get('id');
         fetchData(pokemonFetched);
     }, []);
 
@@ -45,14 +71,20 @@ function Card() {
                 <div className="infos-pokemon">
                     <h1>{pokemon.name} - ID : {pokemon.id}</h1>
                     <div>
-                        <ul>
+                        {/* <ul>
                             {[...pokemon.type].map(el => <li key={el}>{el}</li>)}
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
                 <div className="images-pokemon">
                     <div className="infos-pokemon-front"><img src={pokemon.front} alt="The front of the pokemon" /></div>
                     <div className="infos-pokemon-back"><img src={pokemon.back} alt="The back of the pokemon" /></div>
+                </div>
+                <div className="button-card">
+                    <form action="/card">
+                        <button type="submit" name="id" value={pokemon.id} onClick={handlePrev.bind(this)} className="prev">Previous</button>
+                        <button type="submit" name="id" value={pokemon.id} onClick={handleNext.bind(this)} className="next">Next</button>
+                    </form>
                 </div>
             </div>
         );
