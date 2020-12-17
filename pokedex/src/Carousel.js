@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Carousel.css';
 
 
@@ -17,31 +17,31 @@ function Carousel() {
     const arrImages = getImage(index);
     const [image, setImage] = useState(arrImages);
 
-    let handleIncrement = () => {
-        if (index === 4) {
-            setIndex(0)
-
-        } else {
-            setIndex(index + 1)
-        }
-        setImage(arrImages)
-    }
-
     let handleDecrement = () => {
         if (index === 0) {
-            setIndex(4)
+            setIndex(5)
         } else {
             setIndex(index - 1)
         }
-        setImage(arrImages)
     }
 
+    let handleIncrement = () => {
+        if (index === 5) {
+            setIndex(0)
+        } else {
+            setIndex(index + 1)
+        }
+    }
+
+    useEffect(() => {
+        setImage(arrImages)
+    }, [index, arrImages])
 
     return (
         <div className="carousel-container">
             <img src={image} alt="Carousel" />
-            <button onClick={handleDecrement.bind(this)}>-</button>
-            <button onClick={handleIncrement.bind(this)}>+</button>
+            <button onClick={() => handleDecrement()}>-</button>
+            <button onClick={() => handleIncrement()}>+</button>
         </div>
     );
 }
