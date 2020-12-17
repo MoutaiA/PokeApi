@@ -11,36 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/* Header */
-
-.header-container {
-  background-color: #ef5350;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-}
-
-.header-logo {
-  margin: 5px;
-  margin-left: 20px;
-}
-
-.header-logo img {
-  width: 50%;
-  height: 100%;
-}
-
-/* Menu */
-
-.nav-bar {
-  display: flex;
-}
-
-.nav-bar>a {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  color: white;
-  padding: 0 1em;
-}
