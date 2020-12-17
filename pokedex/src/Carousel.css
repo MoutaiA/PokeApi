@@ -6,7 +6,7 @@
 
 .carousel-image > img {
     width: 100%;
-    height: auto;
+    height: 500px;
 }
 
 .carousel-buttons {
@@ -28,11 +28,11 @@
 .carousel-buttons>button:first-child {
     position: absolute;
     left: 12%;
-    top: 120%;
+    top: 42%;
 }
 
 .carousel-buttons>button:last-child {
     position: absolute;
     right: 12%;
-    top: 120%;
+    top: 42%;
 }
