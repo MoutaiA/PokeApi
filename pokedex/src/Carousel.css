@@ -4,7 +4,35 @@
     margin-top: 20px;
 }
 
-.carousel-container > img {
+.carousel-image > img {
     width: 100%;
     height: auto;
+}
+
+.carousel-buttons {
+    display: flex;
+}
+
+.carousel-buttons>button {
+    background-color: black;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px;
+    opacity: 0.75;
+}
+
+.carousel-buttons>button:first-child {
+    position: absolute;
+    left: 12%;
+    top: 120%;
+}
+
+.carousel-buttons>button:last-child {
+    position: absolute;
+    right: 12%;
+    top: 120%;
 }

@@ -39,9 +39,13 @@ function Carousel() {
 
     return (
         <div className="carousel-container">
-            <img src={image} alt="Carousel" />
-            <button onClick={() => handleDecrement()}>-</button>
-            <button onClick={() => handleIncrement()}>+</button>
+            <div className="carousel-image">
+                <img src={image} alt="Carousel" />
+            </div>
+            <div className="carousel-buttons">
+                <button onClick={() => handleDecrement()}>←</button>
+                <button onClick={() => handleIncrement()}>→</button>
+            </div>
         </div>
     );
 }
