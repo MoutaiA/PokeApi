@@ -32,7 +32,6 @@ function Card(props) {
         const req = index !== pokemon.id ? index : props.param
         fetchPokemon(req)
             .then(res => {
-                console.log(res);
                 setPokemon({
                     name: res.name,
                     id: res.id,

@@ -1,15 +1,44 @@
 import React from 'react';
 import './Container.css'
+import HighLight from './HighLight'
+import Visited from './Visited'
+import Favorite from './Favorite'
 
-class Container extends React.Component {
-    render() {
+function Container(props) {
+
+    if (props.title === 'Highlight') {
         return (
-            <section className={this.props.class}>
-                <header className="container-title">{this.props.title}</header>
-                <div className="container-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia aliquid debitis reiciendis, exercitationem voluptate eius veritatis autem voluptatem laboriosam ex quis ipsa et deserunt. Temporibus voluptatem voluptates iusto voluptas autem.</div>
+            <section className={props.class}>
+                <header className="container-title">{props.title}</header>
+                <HighLight />
+                <HighLight />
+                <HighLight />
+            </section>
+        );
+    }
+
+    else if (props.title === 'Last visited') {
+        return (
+            <section className={props.class}>
+                <header className="container-title">{props.title}</header>
+                <Visited />
+                <Visited />
+                <Visited />
+            </section>
+        );
+    }
+
+    else {
+        return (
+            <section className={props.class}>
+                <header className="container-title">{props.title}</header>
+                <Favorite />
+                <Favorite />
+                <Favorite />
             </section>
         );
     }
 }
 
-export default Container
+
+export default Container;

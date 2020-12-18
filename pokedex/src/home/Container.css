@@ -1,3 +1,19 @@
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.card-container>section {
+    width: 25%;
+    height: auto;
+}
+
+.card-container a {
+    text-decoration: none;
+}
+
 .container-title {
     border-radius: 5px 5px 0 0;
     color: white;
@@ -11,8 +27,8 @@
 
 .container-body {
     border: 1px gray solid;
-    padding: 2%;
-    padding-top: 10px;
     border-radius: 0 0 5px 5px;
     text-align: justify;
+    display: flex;
+    justify-content: space-evenly;
 }
