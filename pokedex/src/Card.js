@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Card.css';
+import CardFailedLoading from './CardFailedLoading'
+import fetchPokemon from './fetchPokemon';
 import {
-    useLocation,
+    Link,
 } from "react-router-dom";
 
-function Card() {
+function Card(props) {
 
     const [pokemon, setPokemon] = useState({
         name: '',
@@ -13,10 +15,22 @@ function Card() {
         front: '',
         back: ''
     });
+    const [index, setIndex] = useState(pokemon.id)
+    const [isValidPokemon, setValidPokemon] = useState(false)
 
-    let fetchData = (pokemonName) => {
-        fetch('https://pokeapi.co/api/v2/pokemon/' + pokemonName)
-            .then(res => res.json())
+    let handlePrev = () => {
+        let id = pokemon.id === 1 ? 151 : index - 1;
+        setIndex(id)
+    }
+
+    let handleNext = () => {
+        let id = pokemon.id === 151 ? 1 : index + 1;
+        setIndex(id)
+    }
+
+    useEffect(() => {
+        const req = index !== pokemon.id ? index : props.param
+        fetchPokemon(req)
             .then(res => {
                 setPokemon({
                     name: res.name,
@@ -24,56 +38,25 @@ function Card() {
                     type: res.types.map(el => el.type.name),
                     front: res.sprites.front_default,
                     back: res.sprites.back_default,
-                },
-                )
-                return res;
+                })
+                setIndex(res.id)
+                setValidPokemon(true)
             })
-            .catch(err => console.log('An error occurred : ' + err));
-    }
+            .catch(err => {
+                console.log(err);
+                setValidPokemon(false)
+            });
+    }, [index, props.param, pokemon.id])
 
-    let handlePrev = event => {
-        event.preventDefault();
-        let id = 0;
-        if (pokemon.id === 1) {
-            id = 151
-            setPokemon({ id: id })
-        } else {
-            id = pokemon.id - 1
-            setPokemon({ id: id })
-        }
-        fetchData(id)
-    }
-
-    let handleNext = event => {
-        event.preventDefault();
-        let id = 0;
-        if (pokemon.id === 151) {
-            id = 1
-            setPokemon({ id: id })
-        } else {
-            id = pokemon.id + 1
-            setPokemon({ id: id })
-        }
-        fetchData(id)
-    }
-
-    let query = new URLSearchParams(useLocation().search);
-
-    useEffect(() => {
-        const pokemonFetched = query.get('pokemon') ? query.get('pokemon') : query.get('id');
-        fetchData(pokemonFetched);
-    }, []);
-
-
-    if (query.get('pokemon')) {
+    if (isValidPokemon) {
         return (
             <div className="desc-pokemon">
                 <div className="infos-pokemon">
                     <h1>{pokemon.name} - ID : {pokemon.id}</h1>
                     <div>
-                        {/* <ul>
+                        <ul>
                             {[...pokemon.type].map(el => <li key={el}>{el}</li>)}
-                        </ul> */}
+                        </ul>
                     </div>
                 </div>
                 <div className="images-pokemon">
@@ -82,8 +65,8 @@ function Card() {
                 </div>
                 <div className="button-card">
                     <form action="/card">
-                        <button type="submit" name="id" value={pokemon.id} onClick={handlePrev.bind(this)} className="prev">Previous</button>
-                        <button type="submit" name="id" value={pokemon.id} onClick={handleNext.bind(this)} className="next">Next</button>
+                        <Link onClick={() => handlePrev()} to={`/card?id=${pokemon.id - 1}`}>Previous</Link>
+                        <Link onClick={() => handleNext()} to={`/card?id=${pokemon.id + 1}`}>Next</Link>
                     </form>
                 </div>
             </div>
@@ -91,16 +74,7 @@ function Card() {
 
     } else {
         return (
-            <div>
-                <div className="failed-card-header">
-                    <div className="warning">
-                        <img src="images/warning.png" alt="Logo of a warning" />
-                        <h1>You've entered an invalid Pokémon or no Pokémon at all !</h1>
-                        <img src="images/warning.png" alt="Logo of a warning" />
-                    </div>
-                    <div>Please enter a valid Pokémon in the search bar.</div>
-                </div>
-            </div>
+            <CardFailedLoading />
         );
     }
 }
