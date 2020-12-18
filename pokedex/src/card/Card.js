@@ -28,6 +28,13 @@ function Card(props) {
         setIndex(id)
     }
 
+    let handleClick = () => {
+        if (pokemon.name !== '') {
+            const pokemonToSave = pokemon.name
+            props.callback(pokemonToSave)
+        }
+    }
+
     useEffect(() => {
         const req = index !== pokemon.id ? index : props.param
         fetchPokemon(req)
@@ -64,10 +71,9 @@ function Card(props) {
                     <div className="infos-pokemon-back"><img src={pokemon.back} alt="The back of the pokemon" /></div>
                 </div>
                 <div className="button-card">
-                    <form action="/card">
-                        <Link onClick={() => handlePrev()} to={`/card?id=${pokemon.id - 1}`}>Previous</Link>
-                        <Link onClick={() => handleNext()} to={`/card?id=${pokemon.id + 1}`}>Next</Link>
-                    </form>
+                    <button onClick={() => handleClick()}>Save</button>
+                    <Link onClick={() => handlePrev()} to={`/card?id=${pokemon.id - 1}`}>Previous</Link>
+                    <Link onClick={() => handleNext()} to={`/card?id=${pokemon.id + 1}`}>Next</Link>
                 </div>
             </div>
         );
