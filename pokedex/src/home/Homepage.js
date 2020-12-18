@@ -1,6 +1,6 @@
 import React from 'react';
 import './Homepage.css';
-import Container from './Container';
+import Container from '../home/Container';
 import Carousel from './Carousel';
 
 function Homepage() {

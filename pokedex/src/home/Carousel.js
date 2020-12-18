@@ -7,7 +7,7 @@ function importAllImages(arrayImages) {
 }
 
 function getImage(index) {
-    const carouselImages = importAllImages(require.context('../public/images/carousel/', false, /\.png/));
+    const carouselImages = importAllImages(require.context('../../public/images/carousel/', false, /\.png/));
     return carouselImages[index].default;
 }
 

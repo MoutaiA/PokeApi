@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Card.css';
 import CardFailedLoading from './CardFailedLoading'
-import fetchPokemon from './fetchPokemon';
+import fetchPokemon from '../helper/fetchPokemon';
 import {
     Link,
 } from "react-router-dom";
@@ -32,6 +32,7 @@ function Card(props) {
         const req = index !== pokemon.id ? index : props.param
         fetchPokemon(req)
             .then(res => {
+                console.log(res);
                 setPokemon({
                     name: res.name,
                     id: res.id,

@@ -1,8 +1,8 @@
 import React from 'react';
-import Homepage from './Homepage';
+import Homepage from '../home/Homepage';
 import NotFound from './NotFound';
-import Card from './Card';
-import About from './About';
+import Card from '../card/Card';
+import About from '../about/About';
 import {
     Route,
     Switch,
