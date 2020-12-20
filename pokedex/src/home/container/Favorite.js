@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import fetchPokemon from '../helper/fetchPokemon'
+import fetchPokemon from '../../helper/fetchPokemon'
 import {
     Link,
 } from "react-router-dom";

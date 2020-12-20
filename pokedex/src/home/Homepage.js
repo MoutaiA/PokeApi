@@ -1,16 +1,19 @@
 import React from 'react';
 import './Homepage.css';
-import Container from '../home/Container';
+import DisplayHighLight from './container/DisplayHighLight';
+import DisplayVisited from './container/DisplayVisited';
+import DisplayFavorite from './container/DisplayFavorite';
 import Carousel from './Carousel';
+import './Container.css'
 
 function Homepage(props) {
     return (
         <div className="container-homepage">
             <Carousel />
             <div className="card-container">
-                <Container className="highlight" title="Highlight" />
-                <Container className="last-visited" title="Last visited"  />
-                <Container className="favorite" title="Favorites" pokemon={props.savedPokemon} />
+                <DisplayHighLight className="highlight" title="Highlight" />
+                <DisplayVisited className="last-visited" title="Last visited"  />
+                <DisplayFavorite className="favorite" title="Favorites" pokemon={props.savedPokemon} />
             </div>
         </div>
     )
