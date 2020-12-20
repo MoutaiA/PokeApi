@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Carousel.css';
 
-
 function importAllImages(arrayImages) {
     return arrayImages.keys().map(arrayImages);
 }
