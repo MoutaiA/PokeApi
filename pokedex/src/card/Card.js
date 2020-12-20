@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
-import CardFailedLoading from './CardFailedLoading'
-import CardFetched from './CardFetched';
+import CardFailedLoading from './data/CardFailedLoading'
+import CardFetched from './data/CardFetched';
 
 function Card(props) {
 

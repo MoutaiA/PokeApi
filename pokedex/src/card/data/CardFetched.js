@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import fetchPokemon from '../helper/fetchPokemon';
-import Buttons from './button/Buttons';
+import fetchPokemon from '../../helper/fetchPokemon';
+import Buttons from '../button/Buttons';
+import CardImages from './CardImages';
+import CardInfo from './CardInfo';
 
 function CardFetched(props) {
     const [pokemon, setPokemon] = useState({
@@ -37,19 +39,9 @@ function CardFetched(props) {
 
     return (
         <div className="desc-pokemon">
-            <div className="infos-pokemon">
-                <h1>{pokemon.name} - ID : {pokemon.id}</h1>
-                <div>
-                    <ul>
-                        {[...pokemon.type].map(el => <li key={el}>{el}</li>)}
-                    </ul>
-                </div>
-            </div>
-            <div className="images-pokemon">
-                <div className="infos-pokemon-front"><img src={pokemon.front} alt="The front of the pokemon" /></div>
-                <div className="infos-pokemon-back"><img src={pokemon.back} alt="The back of the pokemon" /></div>
-            </div>
-           <Buttons index={index} setIndex={setIndex} callback={props.callback} pokemon={pokemon} />
+            <CardInfo pokemon={pokemon} />
+            <CardImages pokemon={pokemon} />
+            <Buttons index={index} setIndex={setIndex} callback={props.callback} pokemon={pokemon} />
         </div>
     );
 }
