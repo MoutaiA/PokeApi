@@ -33,3 +33,13 @@
 .images-pokemon {
     display: flex;
 }
+
+.button-card >button:first-child {
+    background-color: #ff0023d1;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}

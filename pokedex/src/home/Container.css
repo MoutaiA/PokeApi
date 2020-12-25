@@ -25,6 +25,10 @@
     border: 1px solid #b83432;
 }
 
+.card-container > section >  h3 {
+    text-align: center;
+}
+
 .container-body {
     border: 1px gray solid;
     border-radius: 0 0 5px 5px;
