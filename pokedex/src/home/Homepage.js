@@ -12,7 +12,7 @@ function Homepage(props) {
             <Carousel />
             <div className="card-container">
                 <DisplayHighLight className="highlight" title="Highlight" />
-                <DisplayVisited className="last-visited" title="Last visited"  />
+                <DisplayVisited className="last-visited" title="Last visited" visitedPokemon={props.visitedPokemon}  />
                 <DisplayFavorite className="favorite" title="Favorites" pokemon={props.savedPokemon} />
             </div>
         </div>

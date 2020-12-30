@@ -2,9 +2,9 @@ import React from 'react';
 
 function UnvisitedDisplay() {
 
-return(
-<div>toto</div>
-);
+    return (
+        <h3>No pokemon page visited yet !</h3>
+    );
 }
 
 export default UnvisitedDisplay
