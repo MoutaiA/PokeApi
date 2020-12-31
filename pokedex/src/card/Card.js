@@ -29,7 +29,6 @@ function Card(props) {
                 })
                 setIndex(res.id)
                 setValidPokemon(true)
-                props.visitedPage(res.name)
             })
             .catch(err => {
                 console.log(err);
