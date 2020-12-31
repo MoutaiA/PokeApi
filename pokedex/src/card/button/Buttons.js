@@ -7,9 +7,13 @@ function Buttons(props) {
 
     return (
         <div className="button-card">
-            <ButtonSave callback={props.callback} pokemon={props.pokemon} />
-            <ButtonPrev index={props.index} setIndex={props.setIndex} pokemon={props.pokemon} />
-            <ButtonNext index={props.index} setIndex={props.setIndex} pokemon={props.pokemon} />
+            <div className="btn-save">
+                <ButtonSave callback={props.callback} pokemon={props.pokemon} />
+            </div>
+            <div className="btn-change">
+                <ButtonPrev index={props.index} setIndex={props.setIndex} pokemon={props.pokemon} />
+                <ButtonNext index={props.index} setIndex={props.setIndex} pokemon={props.pokemon} />
+            </div>
         </div>
     );
 }

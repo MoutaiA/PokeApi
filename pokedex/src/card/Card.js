@@ -20,12 +20,14 @@ function Card(props) {
         const req = index !== pokemon.id ? index : props.param
         fetchPokemon(req)
             .then(res => {
+                console.log(res);
                 setPokemon({
                     name: res.name,
                     id: res.id,
                     type: res.types.map(el => el.type.name),
                     front: res.sprites.front_default,
                     back: res.sprites.back_default,
+                    official: res.sprites.other["official-artwork"].front_default
                 })
                 setIndex(res.id)
                 setValidPokemon(true)

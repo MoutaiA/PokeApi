@@ -15,7 +15,7 @@
     color: rgb(192, 46, 46);
 }
 
-.warning > img {
+.warning>img {
     width: 100px;
 }
 
@@ -27,14 +27,17 @@
 
 .desc-pokemon {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 20px;
 }
 
 .images-pokemon {
     display: flex;
 }
 
-.button-card >button:first-child {
+/* Button of the page */
+
+.btn-save>button {
     background-color: #ff0023d1;
     border: none;
     border-radius: 5px;
@@ -42,4 +45,46 @@
     font-weight: bold;
     color: white;
     cursor: pointer;
+}
+
+/* The aside part of the page */
+
+.aside-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d40000;
+    background-origin: 5px;
+    border-radius: 5px;
+}
+
+.aside-container>div {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #c12f2f;
+    border-collapse: collapse;
+}
+
+.aside-container-title {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.aside-container-title>div {
+    border: 1px solid #c12f2f;
+    padding: 15px;
+    margin: 1px;
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+    background-color: #f36b6b;
+}
+
+.aside-container-title>div::first-letter {
+    text-transform: uppercase;
+}
+
+.aside-container-image>img {
+    width: 350px;
+    height: auto;
 }
