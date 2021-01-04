@@ -68,12 +68,13 @@
 .aside-container-title {
     display: flex;
     justify-content: space-evenly;
+    background-color: #f7c7c7;
 }
 
 .aside-container-title>div {
     border: 1px solid #c12f2f;
     padding: 15px;
-    margin: 1px;
+    margin: 5px;
     border-radius: 5px;
     width: 100%;
     color: white;
@@ -87,4 +88,34 @@
 .aside-container-image>img {
     width: 350px;
     height: auto;
+}
+
+table {
+    display: flex;
+    width: 100%;
+}
+
+tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+tr {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+tr > th, td {
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+    background-color: rgba(129, 53, 2, 0.829);
+    border-radius: 5px;
+    color: white;
+}
+
+tr > td:first-child {
+    text-transform: uppercase;
 }

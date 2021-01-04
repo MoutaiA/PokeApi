@@ -27,7 +27,10 @@ function Card(props) {
                     type: res.types.map(el => el.type.name),
                     front: res.sprites.front_default,
                     back: res.sprites.back_default,
-                    official: res.sprites.other["official-artwork"].front_default
+                    official: res.sprites.other["official-artwork"].front_default,
+                    height: res.height,
+                    weight: res.weight,
+                    exp: res.base_experience
                 })
                 setIndex(res.id)
                 setValidPokemon(true)
