@@ -37,6 +37,14 @@
 
 /* Button of the page */
 
+.main-card-container {
+    width: 100%;
+}
+
+.button-card {
+    margin-right: 10px;
+}
+
 .btn-save>button {
     background-color: #ff0023d1;
     border: none;
@@ -45,6 +53,54 @@
     font-weight: bold;
     color: white;
     cursor: pointer;
+}
+
+.btn-change {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #f8f8ff;
+    border: 1px solid #88a;
+    padding: 5px;
+}
+
+.btn-change>div {
+    display: flex;
+    width: 100%;
+}
+
+.btn-change a {
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: #0b0080;
+    width: 100%;
+    display: flex;
+}
+
+.cursor-prev,
+.cursor-next {
+    align-self: center;
+}
+
+.pokemon-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.pokemon-info.prev>div:last-child,
+.pokemon-info.next>div:first-child {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.pokemon-info.prev>div:last-child>div:first-child,
+.pokemon-info.next>div:first-child>div:first-child {
+    text-transform: capitalize;
 }
 
 /* The aside part of the page */
@@ -107,7 +163,8 @@ tr {
     width: 100%;
 }
 
-tr > th, td {
+tr>th,
+td {
     width: 100%;
     text-align: center;
     margin: 5px;
@@ -116,6 +173,6 @@ tr > th, td {
     color: white;
 }
 
-tr > td:first-child {
+tr>td:first-child {
     text-transform: uppercase;
 }

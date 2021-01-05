@@ -7,6 +7,7 @@ function CardFetched(props) {
     return (
         <div className="desc-pokemon">
             <div className="main-card-container">
+                <Buttons index={props.index} setIndex={props.setIndex} callback={props.callback} pokemon={props.pokemon} />
                 <div>
                     liste de lien
                 </div>
@@ -15,7 +16,6 @@ function CardFetched(props) {
                 <div>stats</div>
                 <div>évolution</div>
 
-                <Buttons index={props.index} setIndex={props.setIndex} callback={props.callback} pokemon={props.pokemon} />
             </div>
             <Aside pokemon={props.pokemon} />
         </div>
